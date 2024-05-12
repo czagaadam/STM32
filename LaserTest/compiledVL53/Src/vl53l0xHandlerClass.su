@@ -1,0 +1,14 @@
+../Src/vl53l0xHandlerClass.c:21:6:VL53L0X_InitHandlerClass	16	static
+../Src/vl53l0xHandlerClass.c:29:15:VL53L0X_GetDevice	16	static
+../Src/vl53l0xHandlerClass.c:34:15:VL53L0X_GetLastDevice	16	static
+../Src/vl53l0xHandlerClass.c:39:9:VL53L0X_GetDeviceIndexer	4	static
+../Src/vl53l0xHandlerClass.c:44:6:VL53L0X_DefineAndPutDevice	376	static
+../Src/vl53l0xHandlerClass.c:55:6:VL53L0X_DeleteDevice	4	static
+../Src/vl53l0xHandlerClass.c:60:6:VL53L0X_APPStart	4	static
+../Src/vl53l0xHandlerClass.c:64:6:VL53L0X_APPStartCustomAddress	16	static
+../Src/vl53l0xHandlerClass.c:69:6:VL53L0X_APPStartCustomLastAddress	8	static
+../Src/vl53l0xHandlerClass.c:74:6:VL53L0X_ResetNodes	16	static
+../Src/vl53l0xHandlerClass.c:84:6:VL53L0X_ActiveNodeAddress	24	static
+../Src/vl53l0xHandlerClass.c:100:6:VL53L0X_ActiveLastNodeAddress	16	static
+../Src/vl53l0xHandlerClass.c:116:10:VL53L0X_NodeMeasure	24	static
+../Src/vl53l0xHandlerClass.c:122:10:VL53L0X_LastNodeMeasure	16	static
