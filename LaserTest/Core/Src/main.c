@@ -34,13 +34,13 @@ const uint8_t numofsensors = 1;
 
 int main(void)
 {
-  GPIOD->BSRR = (uint32_t)GPIO_PIN_15 << 16U;
+  //GPIOD->BSRR = (uint32_t)GPIO_PIN_15 << 16U;
   GPIOD->BSRR = (uint32_t)GPIO_PIN_14 << 16U;
   HAL_Init();
   SystemClock_Config();
   MX_GPIO_Init();
   MX_I2C1_Init();
-  HAL_GPIO_WritePin(GPIOD,GPIO_PIN_15,GPIO_PIN_RESET);
+  //HAL_GPIO_WritePin(GPIOD,GPIO_PIN_15,GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOD,GPIO_PIN_14,GPIO_PIN_RESET);
   //memory allocation for VL53L0X_Dev_t structures and gpio pins
   VL53L0X_InitHandlerClass(numofsensors);
@@ -60,20 +60,20 @@ int main(void)
   //VL53L0X_APPStartCustomAddress(1);
   HAL_Delay(500);
   //set new address for 2nd sensor
-  VL53L0X_ActiveNodeAddress(2);
+  VL53L0X_ActiveNodeAddress(1);
   HAL_Delay(500);
   //initialize sensor with custom address
-  VL53L0X_APPStartCustomAddress(2);
+  VL53L0X_APPStartCustomAddress(1);
   HAL_Delay(500);
   while (1)
   {
-	  /*HAL_GPIO_WritePin(GPIOG,GPIO_PIN_13,GPIO_PIN_SET);
-	  HAL_Delay(500);
+	  HAL_GPIO_WritePin(GPIOG,GPIO_PIN_13,GPIO_PIN_SET);
+	  HAL_Delay(250);
 	  HAL_GPIO_WritePin(GPIOG,GPIO_PIN_13,GPIO_PIN_RESET);
-	  HAL_Delay(500);*/
+	  HAL_Delay(250);
 	  //sensor1_mm = VL53L0X_NodeMeasure(1);
-	  HAL_Delay(500);
-	  sensor2_mm = VL53L0X_NodeMeasure(2);
+	  //HAL_Delay(500);
+	  sensor1_mm = VL53L0X_NodeMeasure(1);
   }
 }
 void SystemClock_Config(void)
