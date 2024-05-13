@@ -7,7 +7,7 @@ Currently I'm interfacing sensor devices to STM32F429I-Discovery board and trans
 Here is the datasheet of the first sensor,
 it is a VL53L0X TOF Time-of-Flight laser-ranging module.
 https://www.pololu.com/product/2490
-The core library is the property of STM, I made some small modification to be able to compile with my setup:
+The core library is the property of STM, I made some small modification to be able to compile with my setup.
 https://github.com/czagaadam/STM32/tree/main/vl53l0x/Src/vl53l0x
 
 I made a high level library to easily initialize the sensor via I2C.
