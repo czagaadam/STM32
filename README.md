@@ -29,3 +29,8 @@ I2C message(starts with 0x14) when target at 100mm
 
 
 More sensors and CAN bus are coming soon...
+
+Interfacing MCP2551 CAN transceiver and sending VL53 I2C sensor data via CAN bus.
+https://github.com/czagaadam/STM32/tree/main/LaserTestWithCAN
+![transfer_laster_measurement](https://github.com/czagaadam/STM32/assets/168843740/7d8cb43b-8d6a-434d-9049-f515deecc511)
+
