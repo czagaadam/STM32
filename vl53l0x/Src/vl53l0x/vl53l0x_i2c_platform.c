@@ -25,10 +25,10 @@
 #include "stmvl53l0x-cci.h"
 */
 
-#include <i2c.h>
-#include "vl53l0x/vl53l0x_platform.h"
+//#include <i2c.h>
+//#include "vl53l0x/vl53l0x_platform.h"
 #include "vl53l0x/vl53l0x_i2c_platform.h"
-#include "vl53l0x/vl53l0x_def.h"
+//#include "vl53l0x/vl53l0x_def.h"
 
 #include "vl53l0x/vl53l0x_platform_log.h"
 
@@ -129,8 +129,8 @@ int32_t VL53L0X_comms_close(void)
 	return status;
 }
 
-//int32_t VL53L0X_set_page(VL53L0X_DEV dev, uint8_t page_data)
-int32_t VL53L0X_set_page(uint8_t dev, uint8_t page_data)
+int32_t VL53L0X_set_page(VL53L0X_DEV dev, uint8_t page_data)
+//int32_t VL53L0X_set_page(uint8_t dev, uint8_t page_data)
 {
 	int32_t status = STATUS_OK;
 	uint16_t page_index = 0xFF;
@@ -142,12 +142,12 @@ int32_t VL53L0X_set_page(uint8_t dev, uint8_t page_data)
 	buffer[2] = page_data;
 
 	//status = VL53L0X_I2CWrite(dev, buffer, (uint8_t) 3);
-	status = HAL_I2C_Master_Transmit(&hi2c1, dev, buffer, (uint8_t) 3, 50);
+	status = HAL_I2C_Master_Transmit(dev->hi2c, dev->I2cDevAddr, buffer, (uint8_t) 3, 50);
 	return status;
 }
 
-//int32_t VL53L0X_write_multi(VL53L0X_DEV dev, uint8_t index, uint8_t *pdata,int32_t count)
-int32_t VL53L0X_write_multi(uint8_t dev, uint8_t index, uint8_t *pdata,int32_t count)
+int32_t VL53L0X_write_multi(VL53L0X_DEV dev, uint8_t index, uint8_t *pdata,int32_t count)
+//int32_t VL53L0X_write_multi(uint8_t dev, uint8_t index, uint8_t *pdata,int32_t count)
 {
 	int32_t status = STATUS_OK;
 	uint8_t *buffer;
@@ -173,12 +173,12 @@ int32_t VL53L0X_write_multi(uint8_t dev, uint8_t index, uint8_t *pdata,int32_t c
 	buffer[0] = index;
 	memcpy(&buffer[1], pdata, count);
 	//status = VL53L0X_I2CWrite(dev, buffer, (count+1));
-	status = HAL_I2C_Master_Transmit(&hi2c1, dev, buffer, (count+1), 50);
+	status = HAL_I2C_Master_Transmit(dev->hi2c, dev->I2cDevAddr, buffer, (count+1), 50);
 	return status;
 }
 
-//int32_t VL53L0X_read_multi(VL53L0X_DEV dev, uint8_t index, uint8_t *pdata,int32_t count)
-int32_t VL53L0X_read_multi(uint8_t dev, uint8_t index, uint8_t *pdata,int32_t count)
+int32_t VL53L0X_read_multi(VL53L0X_DEV dev, uint8_t index, uint8_t *pdata,int32_t count)
+//int32_t VL53L0X_read_multi(uint8_t dev, uint8_t index, uint8_t *pdata,int32_t count)
 {
 	int32_t status = STATUS_OK;
 	uint8_t *buffer;
@@ -195,11 +195,11 @@ int32_t VL53L0X_read_multi(uint8_t dev, uint8_t index, uint8_t *pdata,int32_t co
 	buffer =  VL53L0X_GetLocalBuffer(dev, 1);
 	buffer[0] = index;
 	//status = VL53L0X_I2CWrite(dev, (uint8_t *)buffer, (uint8_t)1);
-	status = HAL_I2C_Master_Transmit(&hi2c1, dev, (uint8_t *)buffer, (uint8_t)1, 50);
+	status = HAL_I2C_Master_Transmit(dev->hi2c, dev->I2cDevAddr, (uint8_t *)buffer, (uint8_t)1, 50);
 	if (!status) {
 		pdata[0] = index;
 		//status = VL53L0X_I2CRead(dev, pdata, count);
-		status = HAL_I2C_Master_Receive(&hi2c1, dev, pdata, count, 50);
+		status = HAL_I2C_Master_Receive(dev->hi2c, dev->I2cDevAddr, pdata, count, 50);
 	}
 
 #ifdef VL53L0X_LOG_ENABLE
@@ -218,8 +218,8 @@ int32_t VL53L0X_read_multi(uint8_t dev, uint8_t index, uint8_t *pdata,int32_t co
 }
 
 
-//int32_t VL53L0X_write_byte(VL53L0X_DEV dev, uint8_t index, uint8_t data)
-int32_t VL53L0X_write_byte(uint8_t dev, uint8_t index, uint8_t data)
+int32_t VL53L0X_write_byte(VL53L0X_DEV dev, uint8_t index, uint8_t data)
+//int32_t VL53L0X_write_byte(uint8_t dev, uint8_t index, uint8_t data)
 {
 	int32_t status = STATUS_OK;
 	const int32_t cbyte_count = 1;
@@ -230,8 +230,8 @@ int32_t VL53L0X_write_byte(uint8_t dev, uint8_t index, uint8_t data)
 
 }
 
-//int32_t VL53L0X_write_word(VL53L0X_DEV dev, uint8_t index, uint16_t data)
-int32_t VL53L0X_write_word(uint8_t dev, uint8_t index, uint16_t data)
+int32_t VL53L0X_write_word(VL53L0X_DEV dev, uint8_t index, uint16_t data)
+//int32_t VL53L0X_write_word(uint8_t dev, uint8_t index, uint16_t data)
 {
 	int32_t status = STATUS_OK;
 
@@ -248,8 +248,8 @@ int32_t VL53L0X_write_word(uint8_t dev, uint8_t index, uint16_t data)
 }
 
 
-//int32_t VL53L0X_write_dword(VL53L0X_DEV dev, uint8_t index, uint32_t data)
-int32_t VL53L0X_write_dword(uint8_t dev, uint8_t index, uint32_t data)
+int32_t VL53L0X_write_dword(VL53L0X_DEV dev, uint8_t index, uint32_t data)
+//int32_t VL53L0X_write_dword(uint8_t dev, uint8_t index, uint32_t data)
 {
 	int32_t status = STATUS_OK;
 	uint8_t  buffer[BYTES_PER_DWORD];
@@ -267,8 +267,8 @@ int32_t VL53L0X_write_dword(uint8_t dev, uint8_t index, uint32_t data)
 }
 
 
-//int32_t VL53L0X_read_byte(VL53L0X_DEV dev, uint8_t index, uint8_t *pdata)
-int32_t VL53L0X_read_byte(uint8_t dev, uint8_t index, uint8_t *pdata)
+int32_t VL53L0X_read_byte(VL53L0X_DEV dev, uint8_t index, uint8_t *pdata)
+//int32_t VL53L0X_read_byte(uint8_t dev, uint8_t index, uint8_t *pdata)
 {
 	int32_t status = STATUS_OK;
 	int32_t cbyte_count = 1;
@@ -280,8 +280,8 @@ int32_t VL53L0X_read_byte(uint8_t dev, uint8_t index, uint8_t *pdata)
 }
 
 
-//int32_t VL53L0X_read_word(VL53L0X_DEV dev, uint8_t index, uint16_t *pdata)
-int32_t VL53L0X_read_word(uint8_t dev, uint8_t index, uint16_t *pdata)
+int32_t VL53L0X_read_word(VL53L0X_DEV dev, uint8_t index, uint16_t *pdata)
+//int32_t VL53L0X_read_word(uint8_t dev, uint8_t index, uint16_t *pdata)
 {
 	int32_t  status = STATUS_OK;
 	uint8_t  buffer[BYTES_PER_WORD];
@@ -293,8 +293,8 @@ int32_t VL53L0X_read_word(uint8_t dev, uint8_t index, uint16_t *pdata)
 
 }
 
-//int32_t VL53L0X_read_dword(VL53L0X_DEV dev, uint8_t index, uint32_t *pdata)
-int32_t VL53L0X_read_dword(uint8_t dev, uint8_t index, uint32_t *pdata)
+int32_t VL53L0X_read_dword(VL53L0X_DEV dev, uint8_t index, uint32_t *pdata)
+//int32_t VL53L0X_read_dword(uint8_t dev, uint8_t index, uint32_t *pdata)
 {
 	int32_t status = STATUS_OK;
 	uint8_t  buffer[BYTES_PER_DWORD];

@@ -1,5 +1,5 @@
 /*******************************************************************************
- Copyright © 2016, STMicroelectronics International N.V.
+ Copyright ï¿½ 2016, STMicroelectronics International N.V.
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -52,7 +52,7 @@ VL53L0X_Error VL53L0X_check_part_used(VL53L0X_DEV Dev,
 	uint8_t ModuleIdInt;
 	char *ProductId_tmp;
 
-	LOG_FUNCTION_START("");
+	//LOG_FUNCTION_START("");
 
 	Status = VL53L0X_get_info_from_device(Dev, 2);
 
@@ -70,7 +70,7 @@ VL53L0X_Error VL53L0X_check_part_used(VL53L0X_DEV Dev,
 	}
 	}
 
-	LOG_FUNCTION_END(Status);
+	//LOG_FUNCTION_END(Status);
 	return Status;
 }
 
@@ -127,7 +127,7 @@ VL53L0X_Error VL53L0X_get_device_error_string(VL53L0X_DeviceError ErrorCode,
 {
 	VL53L0X_Error Status = VL53L0X_ERROR_NONE;
 
-	LOG_FUNCTION_START("");
+	//LOG_FUNCTION_START("");
 
 	switch (ErrorCode) {
 	case VL53L0X_DEVICEERROR_NONE:
@@ -197,7 +197,7 @@ VL53L0X_Error VL53L0X_get_device_error_string(VL53L0X_DeviceError ErrorCode,
 
 	}
 
-	LOG_FUNCTION_END(Status);
+	//LOG_FUNCTION_END(Status);
 	return Status;
 }
 
@@ -206,7 +206,7 @@ VL53L0X_Error VL53L0X_get_range_status_string(uint8_t RangeStatus,
 {
 	VL53L0X_Error Status = VL53L0X_ERROR_NONE;
 
-	LOG_FUNCTION_START("");
+	//LOG_FUNCTION_START("");
 
 	switch (RangeStatus) {
 	case 0:
@@ -239,7 +239,7 @@ VL53L0X_Error VL53L0X_get_range_status_string(uint8_t RangeStatus,
 				VL53L0X_STRING_RANGESTATUS_NONE);
 	}
 
-	LOG_FUNCTION_END(Status);
+	//LOG_FUNCTION_END(Status);
 	return Status;
 }
 
@@ -248,7 +248,7 @@ VL53L0X_Error VL53L0X_get_pal_error_string(VL53L0X_Error PalErrorCode,
 {
 	VL53L0X_Error Status = VL53L0X_ERROR_NONE;
 
-	LOG_FUNCTION_START("");
+	//LOG_FUNCTION_START("");
 
 	switch (PalErrorCode) {
 	case VL53L0X_ERROR_NONE:
@@ -329,7 +329,7 @@ VL53L0X_Error VL53L0X_get_pal_error_string(VL53L0X_Error PalErrorCode,
 				VL53L0X_STRING_UNKNOW_ERROR_CODE);
 	}
 
-	LOG_FUNCTION_END(Status);
+	//LOG_FUNCTION_END(Status);
 	return Status;
 }
 
@@ -338,7 +338,7 @@ VL53L0X_Error VL53L0X_get_pal_state_string(VL53L0X_State PalStateCode,
 {
 	VL53L0X_Error Status = VL53L0X_ERROR_NONE;
 
-	LOG_FUNCTION_START("");
+	//LOG_FUNCTION_START("");
 
 	switch (PalStateCode) {
 	case VL53L0X_STATE_POWERDOWN:
@@ -375,7 +375,7 @@ VL53L0X_Error VL53L0X_get_pal_state_string(VL53L0X_State PalStateCode,
 			VL53L0X_STRING_STATE_UNKNOWN);
 	}
 
-	LOG_FUNCTION_END(Status);
+	//LOG_FUNCTION_END(Status);
 	return Status;
 }
 
@@ -384,7 +384,7 @@ VL53L0X_Error VL53L0X_get_sequence_steps_info(
 		char *pSequenceStepsString)
 {
 	VL53L0X_Error Status = VL53L0X_ERROR_NONE;
-	LOG_FUNCTION_START("");
+	//LOG_FUNCTION_START("");
 
 	switch (SequenceStepId) {
 	case VL53L0X_SEQUENCESTEP_TCC:
@@ -412,7 +412,7 @@ VL53L0X_Error VL53L0X_get_sequence_steps_info(
 		Status = VL53L0X_ERROR_INVALID_PARAMS;
 	}
 
-	LOG_FUNCTION_END(Status);
+	//LOG_FUNCTION_END(Status);
 
 	return Status;
 }
@@ -423,7 +423,7 @@ VL53L0X_Error VL53L0X_get_limit_check_info(VL53L0X_DEV Dev, uint16_t LimitCheckI
 {
 	VL53L0X_Error Status = VL53L0X_ERROR_NONE;
 
-	LOG_FUNCTION_START("");
+	//LOG_FUNCTION_START("");
 
 	switch (LimitCheckId) {
 	case VL53L0X_CHECKENABLE_SIGMA_FINAL_RANGE:
@@ -459,6 +459,6 @@ VL53L0X_Error VL53L0X_get_limit_check_info(VL53L0X_DEV Dev, uint16_t LimitCheckI
 
 	}
 
-	LOG_FUNCTION_END(Status);
+	//LOG_FUNCTION_END(Status);
 	return Status;
 }

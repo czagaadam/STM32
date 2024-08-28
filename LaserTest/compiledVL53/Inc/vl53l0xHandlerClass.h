@@ -10,26 +10,29 @@
 
 void VL53L0X_InitHandlerClass(uint8_t numofDevices);
 
-VL53L0X_Dev_t VL53L0X_GetDevice(uint8_t Indexer);
+VL53L0X_Dev_t VL53L0X_APPSGetDevice(uint8_t Indexer);
 
-VL53L0X_Dev_t VL53L0X_GetLastDevice();
-uint8_t VL53L0X_GetDeviceIndexer();
+VL53L0X_Dev_t VL53L0X_APPSGetLastDevice();
 
-void VL53L0X_DefineAndPutDevice(uint16_t gpioDxshutpin, uint8_t type, uint8_t speed, uint8_t address);
+uint8_t VL53L0X_APPSGetDeviceIndexer();
 
-void VL53L0X_DeleteDevice();
+void VL53L0X_APPSConfigDevice(I2C_HandleTypeDef* hi2c, GPIO_TypeDef* port, uint16_t gpioDxshutpin, uint8_t type, uint8_t speed, uint8_t address);
+
+void VL53L0X_APPSDeleteDevice();
 
 void VL53L0X_APPStart(void);
 
-void VL53L0X_APPStartCustomAddress(uint8_t Indexer);
+void VL53L0X_APPStartWithCustomAddress(uint8_t Indexer);
 
-void VL53L0X_APPStartCustomLastAddress();
-void VL53L0X_ResetNodes();
-void VL53L0X_ActiveNodeAddress(uint8_t Indexer);
+void VL53L0X_APPStartLastDevice();
 
-void VL53L0X_ActiveLastNodeAddress();
+void VL53L0X_APPSResetNodes();
 
-uint16_t VL53L0X_NodeMeasure(uint8_t Indexer);
+void VL53L0X_APPSSetAddress(uint8_t Indexer);
 
-uint16_t VL53L0X_LastNodeMeasure();
+void VL53L0X_APPSetLastDeviceAddress();
+
+uint16_t VL53L0X_APPSNodeMeasure(uint8_t Indexer);
+
+uint16_t VL53L0X_APPSLastNodeMeasure();
 #endif /* VL53L0XHANDLERCLASS_H_ */

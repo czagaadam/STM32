@@ -20,7 +20,7 @@
 //adam
 //#include <windows.h>
 #include <stdio.h>    // sprintf(), vsnprintf(), printf()
-
+#include <stdlib.h>
 #ifdef _MSC_VER
 #define snprintf _snprintf
 #endif

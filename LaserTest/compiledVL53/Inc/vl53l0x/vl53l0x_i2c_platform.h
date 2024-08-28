@@ -21,16 +21,19 @@
 #ifndef _VL53L0X_I2C_PLATFORM_H_
 #define _VL53L0X_I2C_PLATFORM_H_
 
-#include "vl53l0x_def.h"
+#include "vl53l0x_platform.h"
+//#include "vl53l0x_def.h"
+
+
+// Include uint8_t, unit16_t  etc definitions
+#include <stdint.h>
+#include <stdarg.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-// Include uint8_t, unit16_t  etc definitions
 
-#include <stdint.h>
-#include <stdarg.h>
 
 
 /**
@@ -118,8 +121,7 @@ int32_t VL53L0X_cycle_power(void);
  *
  */
 
-int32_t VL53L0X_write_multi(uint8_t address, uint8_t index, uint8_t  *pdata, int32_t count);
-
+int32_t VL53L0X_write_multi(VL53L0X_DEV dev, uint8_t index, uint8_t  *pdata, int32_t count);
 
 /**
  * @brief  Reads the requested number of bytes from the device
@@ -145,7 +147,7 @@ int32_t VL53L0X_write_multi(uint8_t address, uint8_t index, uint8_t  *pdata, int
  *
  */
 
-int32_t VL53L0X_read_multi(uint8_t address,  uint8_t index, uint8_t  *pdata, int32_t count);
+int32_t VL53L0X_read_multi(VL53L0X_DEV dev,  uint8_t index, uint8_t  *pdata, int32_t count);
 
 
 /**
@@ -171,7 +173,7 @@ int32_t VL53L0X_read_multi(uint8_t address,  uint8_t index, uint8_t  *pdata, int
  *
  */
 
-int32_t VL53L0X_write_byte(uint8_t address,  uint8_t index, uint8_t   data);
+int32_t VL53L0X_write_byte(VL53L0X_DEV dev,  uint8_t index, uint8_t   data);
 
 
 /**
@@ -198,7 +200,7 @@ int32_t VL53L0X_write_byte(uint8_t address,  uint8_t index, uint8_t   data);
  *
  */
 
-int32_t VL53L0X_write_word(uint8_t address,  uint8_t index, uint16_t  data);
+int32_t VL53L0X_write_word(VL53L0X_DEV dev,  uint8_t index, uint16_t  data);
 
 
 /**
@@ -225,7 +227,7 @@ int32_t VL53L0X_write_word(uint8_t address,  uint8_t index, uint16_t  data);
  *
  */
 
-int32_t VL53L0X_write_dword(uint8_t address, uint8_t index, uint32_t  data);
+int32_t VL53L0X_write_dword(VL53L0X_DEV dev, uint8_t index, uint32_t  data);
 
 
 
@@ -252,7 +254,7 @@ int32_t VL53L0X_write_dword(uint8_t address, uint8_t index, uint32_t  data);
  *
  */
 
-int32_t VL53L0X_read_byte(uint8_t address,  uint8_t index, uint8_t  *pdata);
+int32_t VL53L0X_read_byte(VL53L0X_DEV dev,  uint8_t index, uint8_t  *pdata);
 
 
 /**
@@ -279,7 +281,7 @@ int32_t VL53L0X_read_byte(uint8_t address,  uint8_t index, uint8_t  *pdata);
  *
  */
 
-int32_t VL53L0X_read_word(uint8_t address,  uint8_t index, uint16_t *pdata);
+int32_t VL53L0X_read_word(VL53L0X_DEV dev,  uint8_t index, uint16_t *pdata);
 
 
 /**
@@ -306,7 +308,7 @@ int32_t VL53L0X_read_word(uint8_t address,  uint8_t index, uint16_t *pdata);
  *
  */
 
-int32_t VL53L0X_read_dword(uint8_t address, uint8_t index, uint32_t *pdata);
+int32_t VL53L0X_read_dword(VL53L0X_DEV dev, uint8_t index, uint32_t *pdata);
 
 
 /**
