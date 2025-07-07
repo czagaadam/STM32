@@ -9,17 +9,17 @@ I'm currently working on integrating sensor devices with the STM32F429I-Discover
 📏 Sensor – VL53L0X Time-of-Flight Module
 
 The first integrated sensor is the VL53L0X, a Time-of-Flight laser-ranging module.
-📄 VL53L0X Datasheet – Pololu #2490
+📄 VL53L0X Datasheet – [Pololu #2490](https://www.pololu.com/product/2490)
 
 The core library, originally provided by STMicroelectronics, has been slightly modified to compile with my current STM32 setup.
-🔗 View core source
+🔗 [View core source](https://github.com/czagaadam/STM32/tree/main/vl53l0x/Src/vl53l0x)
 
 On top of that, I’ve implemented a high-level library to simplify initialization and communication over I2C:
-🔗 High-level abstraction layer
+🔗 [High-level abstraction layer](https://github.com/czagaadam/STM32/tree/main/vl53l0x/Src)
 
 ⚙️ Example Usage
 Here is a basic example demonstrating how to use the library (currently tested with a single sensor only — readdressing multiple devices is still under investigation):
-🔗 LaserTest Example
+🔗 [LaserTest Example](https://github.com/czagaadam/STM32/tree/main/LaserTest)
 
 📊 Sample Measurements
 Target at 100mm → stable reading around 100mm
@@ -46,15 +46,15 @@ Currently I'm interfacing sensor devices to STM32F429I-Discovery board and trans
 
 Here is the datasheet of the first sensor,
 it is a VL53L0X TOF Time-of-Flight laser-ranging module.
-https://www.pololu.com/product/2490
+
 The core library is the property of STM, I made some small modification to be able to compile with my setup.
-https://github.com/czagaadam/STM32/tree/main/vl53l0x/Src/vl53l0x
+
 
 I made a high level library to easily initialize the sensor via I2C.
-https://github.com/czagaadam/STM32/tree/main/vl53l0x/Src
+
 
 Here is an example how to use the library (currently works with only one sensor, there are some kind of issues with re-addressing devices):
-https://github.com/czagaadam/STM32/tree/main/LaserTest
+
 
 And some measurements:
 
