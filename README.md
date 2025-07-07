@@ -18,6 +18,7 @@ On top of that, I’ve implemented a high-level library to simplify initializati
 🔗 [High-level abstraction layer](https://github.com/czagaadam/STM32/tree/main/vl53l0x/Src)
 
 ⚙️ Example Usage
+
 Here is a basic example demonstrating how to use the library (currently tested with a single sensor only — readdressing multiple devices is still under investigation):
 🔗 [LaserTest Example](https://github.com/czagaadam/STM32/tree/main/LaserTest)
 
