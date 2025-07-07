@@ -28,7 +28,7 @@ Target at 100mm → stable reading around 100mm
 Target at 150mm → consistent 150mm response
 ![150mm](https://github.com/czagaadam/STM32/assets/168843740/fd8d53da-a2aa-41cd-96bb-7fc0bbbc6c27)
 I2C capture → message starts with 0x14 for 100mm distance
-(see analyzer output in repo or image)
+
 ![100mm_analyzer](https://github.com/czagaadam/STM32/assets/168843740/af197f4a-13b5-45e3-b0f0-7abbeb04ade0)
 🛠️ Coming Soon
 Support for multiple VL53L0X sensors with I2C re-addressing
