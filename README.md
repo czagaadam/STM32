@@ -30,15 +30,15 @@ Target at 150mm → consistent 150mm response
 I2C capture → message starts with 0x14 for 100mm distance
 
 ![100mm_analyzer](https://github.com/czagaadam/STM32/assets/168843740/af197f4a-13b5-45e3-b0f0-7abbeb04ade0)
-🛠️ Coming Soon
-Support for multiple VL53L0X sensors with I2C re-addressing
+
+# 🛠️ Support for multiple VL53L0X sensors with I2C re-addressing
 
 CAN bus integration using the MCP2551 transceiver
 
 Real-time sensor data transmission over CAN
 
 🚀 Work-in-progress CAN test project:
-🔗 LaserTestWithCAN
+🔗 [LaserTestWithCAN](https://github.com/czagaadam/STM32/tree/main/LaserTestWithCAN)
 ![transfer_laster_measurement](https://github.com/czagaadam/STM32/assets/168843740/7d8cb43b-8d6a-434d-9049-f515deecc511)
 
 
