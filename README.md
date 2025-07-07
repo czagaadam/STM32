@@ -33,45 +33,10 @@ I2C capture → message starts with 0x14 for 100mm distance
 
 # 🛠️ Support for multiple VL53L0X sensors with I2C re-addressing
 
-CAN bus integration using the MCP2551 transceiver
+- CAN bus integration using the MCP2551 transceiver
 
-Real-time sensor data transmission over CAN
+- Real-time sensor data transmission over CAN
 
 🚀 Work-in-progress CAN test project:
 🔗 [LaserTestWithCAN](https://github.com/czagaadam/STM32/tree/main/LaserTestWithCAN)
 ![transfer_laster_measurement](https://github.com/czagaadam/STM32/assets/168843740/7d8cb43b-8d6a-434d-9049-f515deecc511)
-
-
-
-Currently I'm interfacing sensor devices to STM32F429I-Discovery board and transmit sensor data via CAN bus.
-
-Here is the datasheet of the first sensor,
-it is a VL53L0X TOF Time-of-Flight laser-ranging module.
-
-The core library is the property of STM, I made some small modification to be able to compile with my setup.
-
-
-I made a high level library to easily initialize the sensor via I2C.
-
-
-Here is an example how to use the library (currently works with only one sensor, there are some kind of issues with re-addressing devices):
-
-
-And some measurements:
-
-Target at 100mm
-
-
-Target at 150mm
-
-
-I2C message(starts with 0x14) when target at 100mm
-
-
-
-More sensors and CAN bus are coming soon...
-
-Interfacing MCP2551 CAN transceiver and sending VL53 I2C sensor data via CAN bus.
-https://github.com/czagaadam/STM32/tree/main/LaserTestWithCAN
-
-
