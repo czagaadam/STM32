@@ -7,6 +7,7 @@
 I'm currently working on integrating sensor devices with the STM32F429I-Discovery board and transmitting the collected data over the CAN bus.
 
 📏 Sensor – VL53L0X Time-of-Flight Module
+
 The first integrated sensor is the VL53L0X, a Time-of-Flight laser-ranging module.
 📄 VL53L0X Datasheet – Pololu #2490
 
