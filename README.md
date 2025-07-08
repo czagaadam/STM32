@@ -40,3 +40,6 @@ I2C capture → message starts with 0x14 for 100mm distance
 🚀 Work-in-progress CAN test project:
 🔗 [LaserTestWithCAN](https://github.com/czagaadam/STM32/tree/main/LaserTestWithCAN)
 ![transfer_laster_measurement](https://github.com/czagaadam/STM32/assets/168843740/7d8cb43b-8d6a-434d-9049-f515deecc511)
+
+# 🛠️ Build System 
+The entire build and configuration was made in STM32CubeIDE. 
